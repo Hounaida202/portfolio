@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hounaida Etrichi - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 12s ease infinite;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { opacity: 0; transition: opacity 1s ease, transform 1s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            background: #a855f7;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); }
+            100% { transform: translateY(-100px) translateX(100px); }
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden relative">
+    <div class="particles" id="particles"></div>
+
+    <nav class="fixed w-full bg-black/90 backdrop-blur-lg border-b border-purple-900/30 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg rotate-45 transition-transform hover:scale-110"></div>
+                        <span class="absolute inset-0 flex items-center justify-center text-white font-bold text-lg -rotate-45">HE</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html" class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Accueil</a>
+                    <a href="about.html" class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">À propos</a>
+                    <a href="project.html" class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Projets</a>
+                    <a href="#competences" class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Compétences</a>
+                    <a href="#contact" class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Contact</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+      <!-- Projects Section -->
+    <!-- Projects Section - Version Verticale -->
+    <section id="projets" class="py-32 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Titre de section -->
+            <div class="text-center mb-20 fade-in">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="h-px w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+                    <span class="text-purple-400 font-light tracking-widest text-sm uppercase">Projets</span>
+                    <div class="h-px w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+                </div>
+                <h2 class="text-5xl md:text-7xl font-bold">
+                    <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-purple-600 bg-clip-text text-transparent animate-gradient">
+                        Mes réalisations
+                    </span>
+                </h2>
+                <p class="text-gray-400 text-lg mt-6 max-w-3xl mx-auto">
+                    Voici quelques-uns de mes projets phares en tant que développeuse Full Stack, avec un accent particulier sur Java Spring Boot pour des backends robustes et scalables.
+                </p>
+            </div>
+
+            <!-- Projets en colonne verticale -->
+            <div class="grid md:grid-cols-1 gap-16 max-w-5xl mx-auto">
+
+                <!-- Projet 1 : SmartShop -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 to-black rounded-2xl border border-purple-900/30 p-10 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-600/40 glow-hover">
+                    <h3 class="text-4xl font-bold text-white mb-6">SmartShop</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Application web B2B pour MicroTech Maroc permettant de gérer plus de 650 clients, avec des remises de fidélité progressives, des paiements fractionnés et un historique financier fiable pour optimiser la trésorerie.
+                    </p>
+                    
+                    <!-- Images -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <img src="https://raw.githubusercontent.com/pluralsight/guides/master/images/ef4f1e80-6ddc-481d-9bc4-106e1041dc85.27" alt="SmartShop - Interface principale" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                        <img src="https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/1670326766989_business_intelligence_dashboard_exampleGF9YQM.webp?pr-true" alt="SmartShop - Gestion financière" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                    </div>
+                    
+                    <!-- Technologies -->
+                    <div class="mb-8">
+                        <p class="text-purple-400 font-medium mb-3 text-lg">Technologies utilisées :</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Boot</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Web</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Data JPA</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">JUnit 5</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Mockito</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Lien GitHub -->
+                    <a href="https://github.com/Hounaida202/B2B-Commercial-System" target="_blank" class="inline-flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-all text-lg">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Voir le code sur GitHub →
+                    </a>
+                </div>
+
+                <!-- Projet 2 : SDMS -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 to-black rounded-2xl border border-purple-900/30 p-10 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-600/40 glow-hover">
+                    <h3 class="text-4xl font-bold text-white mb-6">SDMS</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Smart Delivery Management System est une application web pour SmartLogi, spécialisée dans la livraison de colis au Maroc. Elle automatise la gestion logistique en remplaçant les processus manuels (Excel et registres papier) par un système moderne et efficace.
+                    </p>
+                    
+                    <!-- Images -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFjNPiVDFk6g9Dqp7wI5C7kYAdmoyssXPQhnxd1pxRlxqVlYBrlI7ru66gYc3adLPxEqH84Xn4jk4U_7oY2T9q_GSVY7ZSDi3W6gmVOV1xE5AytYTBBs1btiwLmCSW2HNACggefPVN8d7Q3HKnlZeHBAz-R_9D4xFramOT2hVVoE9tjcY9dQzhnMrTHCjH/s1280/Transport%20Thumbnail.png" alt="SDMS - Tableau de bord" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUNPa3Knvwy2nkNKO6kEGn7SEAtosMC-bJUAEA2bl4nJZFYKaQzAtB5bDjxwRjOFs_YqjZiNWlrgXjUk0l96vm4MrkB_twaRxe0ovvrfl_57zs771i-_uqYakCwe0OJvt6WPkh5_9md2wrf3pTgrzzMUIS0lJLGNh1JW8k1_HPKWeYbbwebyQyFZ-JpNYB/s1280/Transport%20Overview.png" alt="SDMS - Suivi des livraisons" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                    </div>
+                    
+                    <!-- Technologies -->
+                    <div class="mb-8">
+                        <p class="text-purple-400 font-medium mb-3 text-lg">Technologies utilisées :</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Boot</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Web</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Data JPA</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Spring Security</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">JUnit 5</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Mockito</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Lien GitHub -->
+                    <a href="https://github.com/Hounaida202/SmartLogi-BackEnd" target="_blank" class="inline-flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-all text-lg">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Voir le code sur GitHub →
+                    </a>
+                </div>
+
+                <!-- Projet 3 : TranspostrExpress -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 to-black rounded-2xl border border-purple-900/30 p-10 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-600/40 glow-hover">
+                    <h3 class="text-4xl font-bold text-white mb-6">TranspostrExpress</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        TranspostrExpress est une plateforme web facilitant le transport de marchandises en mettant en relation transporteurs et clients. Chaque utilisateur peut publier des annonces pour proposer ou demander un service de transport spécifique.
+                    </p>
+                    
+                    <!-- Images -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <img src="https://diceus.com/wp-content/uploads/2021/11/img_2-5.png" alt="TranspostrExpress - Annonces" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                        <img src="https://ddi-dev.com/uploads/instant-rates.png" alt="TranspostrExpress - Tableau de bord" class="rounded-xl object-cover w-full h-64 shadow-lg">
+                    </div>
+                    
+                    <!-- Technologies -->
+                    <div class="mb-8">
+                        <p class="text-purple-400 font-medium mb-3 text-lg">Technologies utilisées :</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Laravel</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">Blade</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">JavaScript</span>
+                            <span class="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Lien GitHub -->
+                    <a href="https://github.com/Hounaida202/fil-rouge-project" target="_blank" class="inline-flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-all text-lg">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Voir le code sur GitHub →
+                    </a>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </section>
+    <footer class="border-t border-purple-900/20 mt-32 py-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Hounaida Etrichi.</p>
+        </div>
+    </footer>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            p.style.width = p.style.height = Math.random() * 4 + 2 + 'px';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = Math.random() * 20 + 10 + 's';
+            p.style.animationDelay = Math.random() * 10 + 's';
+            p.style.opacity = Math.random() * 0.4 + 0.1;
+            particlesContainer.appendChild(p);
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
