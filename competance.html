@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compétences - Hounaida Etrichi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 12s ease infinite;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { opacity: 0; transition: opacity 1.2s ease, transform 1.2s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            background: #a855f7;
+            border-radius: 50%;
+            opacity: 0.25;
+            animation: float linear infinite;
+        }
+        @keyframes float {
+            0%   { transform: translateY(100vh) translateX(0); }
+            100% { transform: translateY(-120px) translateX(80px); }
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.55);
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden relative min-h-screen">
+
+    <!-- Particules de fond -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-black/90 backdrop-blur-lg border-b border-purple-900/30 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg rotate-45 transition-transform hover:scale-110"></div>
+                        <span class="absolute inset-0 flex items-center justify-center text-white font-bold text-lg -rotate-45">HE</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html"       class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Accueil</a>
+                    <a href="about.html"       class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">À propos</a>
+                    <a href="project.html"     class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Projets</a>
+                    <a href="competences.html" class="text-purple-400 font-medium transition-all text-sm">Compétences</a>
+                    <a href="contact.html"     class="text-gray-400 hover:text-purple-400 transition-all hover:glow-hover text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="pt-32 pb-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <!-- Titre principal -->
+            <div class="text-center mb-20 fade-in">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="h-px w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+                    <span class="text-purple-400 font-light tracking-widest text-sm uppercase">Compétences</span>
+                    <div class="h-px w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-purple-600 bg-clip-text text-transparent animate-gradient">
+                        Mes compétences techniques
+                    </span>
+                </h1>
+                <p class="text-gray-400 text-xl mt-6 max-w-3xl mx-auto">
+                    Stack Full Stack moderne – forte orientation backend Java/Spring et interfaces frontend réactives & responsives
+                </p>
+            </div>
+
+            <!-- Grille des catégories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+
+                <!-- Frontend -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 via-black to-purple-950/10 rounded-2xl border border-purple-900/35 p-9 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-700/30 glow-hover">
+                    <div class="flex items-center gap-4 mb-7">
+                        <svg class="w-11 h-11 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h14a2 2 0 012 2v12a4 4 0 01-4 4h-2m-6 0h6"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold text-white">Frontend</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">HTML5</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">CSS3</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">JavaScript</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Bootstrap</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">React.js</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Angular</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 via-black to-purple-950/10 rounded-2xl border border-purple-900/35 p-9 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-700/30 glow-hover">
+                    <div class="flex items-center gap-4 mb-7">
+                        <svg class="w-11 h-11 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-9-4h10"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold text-white">Backend</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">PHP</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Laravel</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Java</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">JEE</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Spring Boot</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Spring Security</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">JUnit</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Mockito</span>
+                    </div>
+                </div>
+
+                <!-- Bases de données -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 via-black to-purple-950/10 rounded-2xl border border-purple-900/35 p-9 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-700/30 glow-hover">
+                    <div class="flex items-center gap-4 mb-7">
+                        <svg class="w-11 h-11 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold text-white">Bases de données</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-5 py-2.5 bg-purple-700/20 text-purple-200 rounded-full text-base border border-purple-700/30">MySQL</span>
+                        <span class="px-5 py-2.5 bg-purple-700/20 text-purple-200 rounded-full text-base border border-purple-700/30">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Outils & Méthodologies -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 via-black to-purple-950/10 rounded-2xl border border-purple-900/35 p-9 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-700/30 glow-hover md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-4 mb-7">
+                        <svg class="w-11 h-11 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold text-white">Outils & DevOps</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Git / GitHub</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Postman</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Docker</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">CI/CD</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Trello</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Jira</span>
+                        <span class="px-4 py-2 bg-purple-700/20 text-purple-200 rounded-full text-sm border border-purple-700/30">Figma</span>
+                    </div>
+                </div>
+
+                <!-- Modélisation -->
+                <div class="fade-in bg-gradient-to-br from-purple-900/10 via-black to-purple-950/10 rounded-2xl border border-purple-900/35 p-9 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-700/30 glow-hover md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-4 mb-7">
+                        <svg class="w-11 h-11 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold text-white">Modélisation</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-5 py-2.5 bg-purple-700/20 text-purple-200 rounded-full text-base border border-purple-700/30">UML</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-purple-900/20 py-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>© 2025 Hounaida Etrichi. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Script particules + reveal + smooth scroll -->
+    <script>
+        // Particules
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 35; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            p.style.width = p.style.height = Math.random() * 5 + 2 + 'px';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = Math.random() * 25 + 12 + 's';
+            p.style.animationDelay = Math.random() * 12 + 's';
+            p.style.opacity = Math.random() * 0.35 + 0.1;
+            particlesContainer.appendChild(p);
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll pour ancres internes (si besoin)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
